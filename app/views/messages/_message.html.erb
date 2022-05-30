@@ -1,0 +1,12 @@
+<div id="<%= dom_id message %>">
+  <p>
+    <strong>Name:</strong>
+    <%= message.name %>
+  </p>
+   <p>
+      <%= link_to "Show this message", message %>
+    </p>
+     <%= button_to "Destroy this Message", message_path(message), method: :delete %><br>
+       <%= button_to "Edit this Message", edit_message_path(message), method: :post %>
+
+</div>

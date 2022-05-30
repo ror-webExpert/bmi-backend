@@ -1,0 +1,22 @@
+
+
+
+<h1 class="text-success text-center"> This is using turbo-drive, turbo streams and import maps </h1>
+
+<p style="color: green" id="notice"><%= notice %></p>
+
+  <div id="new_message">
+  <%= render partial: "form", locals: {message: Message.new} %>
+  </div>
+
+
+
+<h1>Messages</h1>
+
+<div id="messages">
+  <% @messages.each do |message| %>
+    <%= render message %>
+  <% end %>
+</div>
+
+<%= link_to "New message", new_message_path %>
