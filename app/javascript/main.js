@@ -77,8 +77,8 @@
   /**
    * Toggle .header-scrolled class to #header when page is scrolled
    */
-  let selectHeader = select('#header')
-  let selectTopbar = select('#topbar')
+  let selectHeader = select('#home-header')
+  let selectTopbar = select('#home-topbar')
   if (selectHeader) {
     const headerScrolled = () => {
       if (window.scrollY > 100) {

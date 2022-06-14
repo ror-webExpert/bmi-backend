@@ -8,7 +8,7 @@
 
       <div class="section-title">
         <h2>Why choose <span>Our Restaurant</span></h2>
-        <p>Ut possimus qui ut temporibus culpa velit eveniet modi omnis est adipisci expedita at voluptas atque vitae autem.</p>
+        <p>So that we may be able to achieve the pleasures and pleasures of life.</p>
       </div>
 
       <div class="row">
@@ -16,24 +16,24 @@
         <div class="col-lg-4">
           <div class="box">
             <span>01</span>
-            <h4>Lorem Ipsum</h4>
-            <p>Ulamco laboris nisi ut aliquip ex ea commodo consequat. Et consectetur ducimus vero placeat</p>
+            <h4>BBQ</h4>
+            <p>Ulamco laboriously And hey we deem it acceptable</p>
           </div>
         </div>
 
         <div class="col-lg-4 mt-4 mt-lg-0">
           <div class="box">
             <span>02</span>
-            <h4>Repellat Nihil</h4>
-            <p>Dolorem est fugiat occaecati voluptate velit esse. Dicta veritatis dolor quod et vel dire leno para dest</p>
+            <h4>Nothing pushes back</h4>
+            <p>To escape from pain is to be blinded by pleasure. The pain of the truth is told</p>
           </div>
         </div>
 
         <div class="col-lg-4 mt-4 mt-lg-0">
           <div class="box">
             <span>03</span>
-            <h4> Ad ad velit qui</h4>
-            <p>Molestiae officiis omnis illo asperiores. Aut doloribus vitae sunt debitis quo vel nam quis</p>
+            <h4> To the employees who</h4>
+            <p>All the annoying tasks that made him extremely demanding. Or are the pains of life due to whom or for what?</p>
           </div>
         </div>
 
@@ -54,162 +54,33 @@
         <div class="col-lg-12 d-flex justify-content-center">
           <ul id="menu-flters">
             <li data-filter="*" class="filter-active">Show All</li>
-            <li data-filter=".filter-starters">Starters</li>
-            <li data-filter=".filter-salads">Salads</li>
-            <li data-filter=".filter-specialty">Specialty</li>
+            <% @categories.each do |category| %>
+            <li data-filter=".filter-<%= category.name %>"><%= category.name %></li>
+           <% end %>
           </ul>
         </div>
       </div>
 
       <div class="row menu-container">
 
-        <div class="col-lg-6 menu-item filter-starters">
-          <div class="row">
-            <div class="col-2">
-              <img src="assets/specials-1.jpg" alt="" class="img-fluid">
-            </div>
-            <div class="col-10">
-              <div class="menu-content">
-                <a href="#">Lobster Bisque</a><span>$5.95</span>
+        <% @menus.each do |menu| %>
+          <div class="col-lg-6 menu-item filter-<%= menu&.category&.name %>">
+            <div class="row">
+              <div class="col-2">
+                <img src="<%= url_for(menu.image) %>" alt="" class="img-fluid">
               </div>
-              <div class="menu-ingredients">
-                Lorem, deren, trataro, filede, nerada
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="col-lg-6 menu-item filter-starters">
-          <div class="row">
-            <div class="col-2">
-              <img src="assets/specials-1.jpg" alt="" class="img-fluid">
-            </div>
-            <div class="col-10">
-              <div class="menu-content">
-                <a href="#">Lobster Bisque</a><span>$5.95</span>
-              </div>
-              <div class="menu-ingredients">
-                Lorem, deren, trataro, filede, nerada
+              <div class="col-10">
+                <div class="menu-content">
+                  <a href="#"><%= menu.name %></a><span><%= menu.price %>$</span>
+                </div>
+                <div class="menu-ingredients">
+                  Home, deren, trataro, filede, nerada
+                </div>
               </div>
             </div>
           </div>
-        </div>
-        <div class="col-lg-6 menu-item filter-starters">
-          <div class="row">
-            <div class="col-2">
-              <img src="assets/specials-1.jpg" alt="" class="img-fluid">
-            </div>
-            <div class="col-10">
-              <div class="menu-content">
-                <a href="#">Lobster Bisque</a><span>$5.95</span>
-              </div>
-              <div class="menu-ingredients">
-                Lorem, deren, trataro, filede, nerada
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="col-lg-6 menu-item filter-starters">
-          <div class="row">
-            <div class="col-2">
-              <img src="assets/specials-1.jpg" alt="" class="img-fluid">
-            </div>
-            <div class="col-10">
-              <div class="menu-content">
-                <a href="#">Lobster Bisque</a><span>$5.95</span>
-              </div>
-              <div class="menu-ingredients">
-                Lorem, deren, trataro, filede, nerada
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="col-lg-6 menu-item filter-starters">
-          <div class="row">
-            <div class="col-2">
-              <img src="assets/specials-1.jpg" alt="" class="img-fluid">
-            </div>
-            <div class="col-10">
-              <div class="menu-content">
-                <a href="#">Lobster Bisque</a><span>$5.95</span>
-              </div>
-              <div class="menu-ingredients">
-                Lorem, deren, trataro, filede, nerada
-              </div>
-            </div>
-          </div>
-        </div>
 
-        <div class="col-lg-6 menu-item filter-specialty">
-          <div class="menu-content">
-            <a href="#">Bread barrel</a><span>$6.95</span>
-          </div>
-          <div class="menu-ingredients">
-            Lorem, deren, trataro, filede, nerada
-          </div>
-        </div>
-
-        <div class="col-lg-6 menu-item filter-starters">
-          <div class="menu-content">
-            <a href="#">Crab Cake</a><span>$7.95</span>
-          </div>
-          <div class="menu-ingredients">
-            A delicate crab cake served on a toasted roll with lettuce and tartar sauce
-          </div>
-        </div>
-
-        <div class="col-lg-6 menu-item filter-salads">
-          <div class="menu-content">
-            <a href="#">Caesar Selections</a><span>$8.95</span>
-          </div>
-          <div class="menu-ingredients">
-            Lorem, deren, trataro, filede, nerada
-          </div>
-        </div>
-
-        <div class="col-lg-6 menu-item filter-specialty">
-          <div class="menu-content">
-            <a href="#">Tuscan Grilled</a><span>$9.95</span>
-          </div>
-          <div class="menu-ingredients">
-            Grilled chicken with provolone, artichoke hearts, and roasted red pesto
-          </div>
-        </div>
-
-        <div class="col-lg-6 menu-item filter-starters">
-          <div class="menu-content">
-            <a href="#">Mozzarella Stick</a><span>$4.95</span>
-          </div>
-          <div class="menu-ingredients">
-            Lorem, deren, trataro, filede, nerada
-          </div>
-        </div>
-
-        <div class="col-lg-6 menu-item filter-salads">
-          <div class="menu-content">
-            <a href="#">Greek Salad</a><span>$9.95</span>
-          </div>
-          <div class="menu-ingredients">
-            Fresh spinach, crisp romaine, tomatoes, and Greek olives
-          </div>
-        </div>
-
-        <div class="col-lg-6 menu-item filter-salads">
-          <div class="menu-content">
-            <a href="#">Spinach Salad</a><span>$9.95</span>
-          </div>
-          <div class="menu-ingredients">
-            Fresh spinach with mushrooms, hard boiled egg, and warm bacon vinaigrette
-          </div>
-        </div>
-
-        <div class="col-lg-6 menu-item filter-specialty">
-          <div class="menu-content">
-            <a href="#">Lobster Roll</a><span>$12.95</span>
-          </div>
-          <div class="menu-ingredients">
-            Plump lobster meat, mayo and crisp lettuce on a toasted bulky roll
-          </div>
-        </div>
+        <% end %>
 
       </div>
 
@@ -223,7 +94,7 @@
 
       <div class="section-title">
         <h2>Check our <span>Specials</span></h2>
-        <p>Ut possimus qui ut temporibus culpa velit eveniet modi omnis est adipisci expedita at voluptas atque vitae autem.</p>
+        <p>So that we may be able to achieve the pleasures and pleasures of life.</p>
       </div>
 
       <div class="row">
@@ -252,8 +123,9 @@
               <div class="row">
                 <div class="col-lg-8 details order-2 order-lg-1">
                   <h3>Architecto ut aperiam autem id</h3>
-                  <p class="fst-italic">Qui laudantium consequatur laborum sit qui ad sapiente dila parde sonata raqer a videna mareta paulona marka</p>
-                  <p>Et nobis maiores eius. Voluptatibus ut enim blanditiis atque harum sint. Laborum eos ipsum ipsa odit magni. Incidunt hic ut molestiae aut qui. Est repellat minima eveniet eius et quis magni nihil. Consequatur dolorem quaerat quos qui similique accusamus nostrum rem vero</p>
+                  <p class="fst-italic">Who is to follow the praises of his labors, who to the wise dila parde sonata raqer a video</p>
+                  <p>
+                    And to us his ancestors. As for the pleasures and flattery of these women. She hates them for her great snacks. They occur here as annoying people or people. It pushes back what will happen to the smallest things, and what is the big thing. Let him seek the consequences of the pain which those who accuse us of something similar in truth</p>
                 </div>
                 <div class="col-lg-4 text-center order-1 order-lg-2">
                   <img src="assets/specials-1.jpg" alt="" class="img-fluid">
@@ -323,7 +195,7 @@
 
       <div class="section-title">
         <h2>Book a <span>Table</span></h2>
-        <p>Ut possimus qui ut temporibus culpa velit eveniet modi omnis est adipisci expedita at voluptas atque vitae autem.</p>
+        <p>So that we may be able to achieve the pleasures and pleasures of life.</p>
       </div>
 
       <form action="forms/book-a-table.php" method="post" role="form" class="php-email-form">
@@ -376,7 +248,7 @@
 
       <div class="section-title">
         <h2><span>Contact</span> Us</h2>
-        <p>Ut possimus qui ut temporibus culpa velit eveniet modi omnis est adipisci expedita at voluptas atque vitae autem.</p>
+        <p>So that we may be able to achieve the pleasures and pleasures of life.</p>
       </div>
     </div>
 

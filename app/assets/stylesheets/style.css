@@ -60,7 +60,7 @@ h1, h2, h3, h4, h5, h6 {
 /*--------------------------------------------------------------
 # Top Bar
 --------------------------------------------------------------*/
-#topbar {
+#home-topbar {
   padding: 0;
   font-size: 15px;
   height: 50px;
@@ -69,17 +69,17 @@ h1, h2, h3, h4, h5, h6 {
   z-index: 996;
   color: rgba(255, 255, 255, 0.7);
 }
-#topbar.topbar-transparent {
+#home-topbar.topbar-transparent {
   background: transparent;
 }
-#topbar.topbar-scrolled {
+#home-topbar.topbar-scrolled {
   top: -50px;
 }
-#topbar i {
+#home-topbar i {
   color: #ffb03b;
   line-height: 0;
 }
-#topbar i span {
+#home-topbar i span {
   color: #fff;
   font-style: normal;
   padding-left: 5px;
@@ -88,7 +88,7 @@ h1, h2, h3, h4, h5, h6 {
 /*--------------------------------------------------------------
 # Header
 --------------------------------------------------------------*/
-#header {
+#home-header {
   top: 50px;
   height: 70px;
   z-index: 997;
@@ -96,25 +96,25 @@ h1, h2, h3, h4, h5, h6 {
   padding: 10px 0;
   background: rgba(26, 24, 22, 0.85);
 }
-#header.header-transparent {
+#home-header.header-transparent {
   background: transparent;
 }
-#header.header-scrolled {
+#home-header.header-scrolled {
   top: 0;
   background: rgba(26, 24, 22, 0.85);
 }
-#header .logo h1 {
+#home-header .logo h1 {
   font-size: 28px;
   margin: 0;
   line-height: 1;
   font-weight: 400;
   letter-spacing: 3px;
 }
-#header .logo h1 a, #header .logo h1 a:hover {
+#home-header .logo h1 a, #header .logo h1 a:hover {
   color: #fff;
   text-decoration: none;
 }
-#header .logo img {
+#home-header .logo img {
   padding: 0;
   margin: 0;
   max-height: 40px;
@@ -809,6 +809,13 @@ section {
   font-size: 14px;
   font-family: "Comic Neue", sans-serif;
   color: #948c81;
+}
+.img-fluid{
+  margin-left: 12px;
+  /* max-width: 94%; */
+  height: 93%;
+  border-radius: 49%;
+  width: 89%;
 }
 
 /*--------------------------------------------------------------
