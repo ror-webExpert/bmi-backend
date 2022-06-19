@@ -1,6 +1,7 @@
 class HomesController < ApplicationController
   def index
-    @categories = Category.all
-    @menus = Menu.all
+    @categories = Category.position_order
+    @sliders = Slider.position_order
+    @menus = Menu.position_order
   end
 end

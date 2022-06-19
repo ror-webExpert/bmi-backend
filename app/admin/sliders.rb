@@ -7,6 +7,7 @@ ActiveAdmin.register Slider do
     f.inputs do
       f.input :position
       f.input :name
+      f.input :description
       f.input :image, as: :file
       f.actions
     end
@@ -16,6 +17,7 @@ ActiveAdmin.register Slider do
     attributes_table do
       row :position
       row :name
+      row :description
       row :image do |ad|
         image_tag Rails.application.routes.url_helpers.rails_blob_url(ad.image, only_path: true), class: 'resize_image'
       end

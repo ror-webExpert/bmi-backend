@@ -7,49 +7,24 @@
       <ol class="carousel-indicators" id="hero-carousel-indicators"></ol>
 
       <div class="carousel-inner" role="listbox">
-
+<% count = 1 %>
         <!-- Slide 1 -->
-        <div class="carousel-item active" style="background-image: url(assets/slide/slide-1.jpg);">
-          <div class="carousel-container">
-            <div class="carousel-content">
-              <h2 class="animate__animated animate__fadeInDown"><span>Shrimp</span> House</h2>
-              <p class="animate__animated animate__fadeInUp">He wants to be more than the pain to do something that can do something. To follow them, and to follow them is to seek nothing in order to get some. Others may be blinded by pain and resilience. It was something like pleasure. We accuse the pain of being countered, or soothed. Less time and sort of extremely.</p>
-              <div>
-                <a href="#menu" class="btn-menu animate__animated animate__fadeInUp scrollto">Our Menu</a>
-                <a href="#book-a-table" class="btn-book animate__animated animate__fadeInUp scrollto">Book a Table</a>
+        <% @sliders.each do |slider| %>
+          <% image = slider.image.present? ? url_for(slider.image) : 'assets/slide/slide-1.jpg' %>
+          <div class="carousel-item <%= 'active' if count==1 %>" style="background-image:  url(<%=image %>)">
+            <div class="carousel-container">
+              <div class="carousel-content">
+                <h2 class="animate__animated animate__fadeInDown"><span><%= slider.name %></span></h2>
+                <p class="animate__animated animate__fadeInUp"><%= slider.description %></p>
+                <div>
+                  <a href="#menu" class="btn-menu animate__animated animate__fadeInUp scrollto">Our Menu</a>
+                  <a href="#book-a-table" class="btn-book animate__animated animate__fadeInUp scrollto">Book a Table</a>
+                </div>
               </div>
             </div>
           </div>
-        </div>
-
-        <!-- Slide 2 -->
-        <div class="carousel-item" style="background-image: url(assets/slide/slide-2.jpg);">
-          <div class="carousel-container">
-            <div class="carousel-content">
-              <h2 class="animate__animated animate__fadeInDown"><span>Shrimp</span> House</h2>
-              <p class="animate__animated animate__fadeInUp">He wants to be more than the pain to do something that can do something. To follow them, and to follow them is to seek nothing in order to get some. Others may be blinded by pain and resilience. It was something like pleasure. We accuse the pain of being countered, or soothed. Less time and sort of extremely..</p>
-              <div>
-                <a href="#menu" class="btn-menu animate__animated animate__fadeInUp scrollto">Our Menu</a>
-                <a href="#book-a-table" class="btn-book animate__animated animate__fadeInUp scrollto">Book a Table</a>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Slide 3 -->
-        <div class="carousel-item" style="background-image: url(assets/slide/slide-3.jpg);">
-          <div class="carousel-container">
-            <div class="carousel-content">
-              <h2 class="animate__animated animate__fadeInDown"><span>Shrimp</span> House</h2>
-              <p class="animate__animated animate__fadeInUp">He wants to be more than the pain to do something that can do something. To follow them, and to follow them is to seek nothing in order to get some. Others may be blinded by pain and resilience. It was something like pleasure. We accuse the pain of being countered, or soothed. Less time and sort of extremely.</p>
-              <div>
-                <a href="#menu" class="btn-menu animate__animated animate__fadeInUp scrollto">Our Menu</a>
-                <a href="#book-a-table" class="btn-book animate__animated animate__fadeInUp scrollto">Book a Table</a>
-              </div>
-            </div>
-          </div>
-        </div>
-
+          <% count = count+1 %>
+        <% end %>
       </div>
 
       <a class="carousel-control-prev" href="#heroCarousel" role="button" data-bs-slide="prev">
