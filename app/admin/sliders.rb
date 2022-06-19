@@ -1,6 +1,6 @@
 ActiveAdmin.register Slider do
 
-  permit_params :position, :name, :image
+  permit_params :position, :name, :image, :description
 
   form do |f|
     f.semantic_errors # shows errors on :base
