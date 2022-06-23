@@ -26,6 +26,5 @@ ActiveAdmin.register Menu do
         image_tag Rails.application.routes.url_helpers.rails_blob_url(ad.image, only_path: true), class: 'resize_image'
       end
     end
-    active_admin_comments
   end
 end
