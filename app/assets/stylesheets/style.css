@@ -490,6 +490,19 @@ section {
   margin: 15px auto 0 auto;
   font-weight: 300;
 }
+.address-content{
+  margin-top: 150px ;
+  color: #ffb03b;
+  font-size: 26px;
+  font-weight: bold;
+}
+.address-a{
+  color: #ffb03b !important;
+}
+.address-a:hover{
+  color: #38678b !important;
+  text-decoration: #38678b !important;
+}
 @media (min-width: 1024px) {
   .section-title p {
     width: 50%;
