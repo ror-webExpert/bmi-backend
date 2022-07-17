@@ -9,7 +9,7 @@ ActiveAdmin.register SocialLink do
   #
   # or
   form do |f|
-    f.inputs :name, as: :select, collection: proc { SocialLink.names }, input_html: { class: 'default-select' }
+    f.inputs :name, as: :select, collection: {"twitter"=>"twitter", "facebook"=>"facebook", "instagram"=>"instagram", "google_plus"=>"google-plus", "linkedin"=>"linkedin"}, input_html: { class: 'select' }
     f.inputs :url
     f.inputs :position
     f.actions
