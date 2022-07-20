@@ -1415,3 +1415,17 @@ section {
 #footer .credits {
   font-size: 13px;
 }
+
+.img-height-width{
+  height: 250px;
+  width: 700px;
+}
+@media (max-width: 992px) {
+  .img-height-width{
+    height: 200px;
+    width: 350px;
+  }
+  .address-content{
+   margin-top: 80px;
+  }
+}
