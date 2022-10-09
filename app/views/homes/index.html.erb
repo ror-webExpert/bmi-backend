@@ -40,7 +40,7 @@
           <ul id="menu-flters">
             <li data-filter="*" class="filter-active">Show All</li>
             <% @categories.each do |category| %>
-              <li data-filter=".filter-<%= category.name %>"><%= category.name %></li>
+              <li data-filter=".filter-<%= category&.name&.parameterize %>"><%= category.name %></li>
             <% end %>
           </ul>
         </div>
@@ -49,7 +49,7 @@
       <div class="row menu-container">
 
         <% @menus.each do |menu| %>
-          <div class="col-lg-6 menu-item filter-<%= menu&.category&.name %>">
+          <div class="col-lg-6 menu-item filter-<%= menu&.category&.name&.parameterize %>">
             <div class="row">
               <div class="col-2">
                 <img src="<%= menu.image.present? ? url_for(menu.image) : "" %>" alt="" class="img-fluid">
