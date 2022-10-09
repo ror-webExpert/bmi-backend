@@ -52,7 +52,7 @@
           <div class="col-lg-6 menu-item filter-<%= menu&.category&.name %>">
             <div class="row">
               <div class="col-2">
-                <img src="<%= url_for(menu.image) %>" alt="" class="img-fluid">
+                <img src="<%= menu.image.present? ? url_for(menu.image) : "" %>" alt="" class="img-fluid">
               </div>
               <div class="col-10">
                 <div class="menu-content">
@@ -106,7 +106,7 @@
                     <p><%= check_special.description %></p>
                   </div>
                   <div class="col-lg-4 text-center order-1 order-lg-2">
-                    <img src="<%= url_for(check_special.image) %>" alt="" class="img-fluid">
+                    <img src="<%= check_special.image.present?  ? url_for(check_special.image) : "" %>" alt="" class="img-fluid">
                   </div>
                 </div>
               </div>
