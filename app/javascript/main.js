@@ -181,7 +181,8 @@
     if (menuContainer) {
       let menuIsotope = new Isotope(menuContainer, {
         itemSelector: '.menu-item',
-        layoutMode: 'fitRows'
+        layoutMode: 'fitRows',
+        filter: '.filter-boiled',
       });
 
       let menuFilters = select('#menu-flters li', true);
