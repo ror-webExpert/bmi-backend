@@ -178,11 +178,12 @@
    */
   window.addEventListener('load', () => {
     let menuContainer = select('.menu-container');
+    let active_class = select("#menu-flters li.filter-active").dataset.filter
     if (menuContainer) {
       let menuIsotope = new Isotope(menuContainer, {
         itemSelector: '.menu-item',
         layoutMode: 'fitRows',
-        filter: '.filter-boiled',
+        filter: active_class,
       });
 
       let menuFilters = select('#menu-flters li', true);
