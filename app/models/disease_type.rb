@@ -8,7 +8,8 @@ class DiseaseType < ApplicationRecord
   def disease_type_data
     {
       id: self.id,
-      name: self.symbol.html_safe,
+      name: self.name,
+      name: self.symbol,
       # image_url: self.image.present? ? rails_blobs_for(self.image) : '',
     }
   end
