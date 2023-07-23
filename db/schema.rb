@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_06_23_211146) do
+ActiveRecord::Schema[7.0].define(version: 2023_07_23_120837) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -68,52 +68,59 @@ ActiveRecord::Schema[7.0].define(version: 2022_06_23_211146) do
     t.index ["reset_password_token"], name: "index_admin_users_on_reset_password_token", unique: true
   end
 
-  create_table "categories", force: :cascade do |t|
-    t.bigint "position"
+  create_table "ckeditor_assets", force: :cascade do |t|
+    t.string "data_file_name", null: false
+    t.string "data_content_type"
+    t.integer "data_file_size"
+    t.string "data_fingerprint"
+    t.string "type", limit: 30
+    t.datetime "created_at", precision: nil, null: false
+    t.datetime "updated_at", precision: nil, null: false
+    t.index ["type"], name: "index_ckeditor_assets_on_type"
+  end
+
+  create_table "disease_types", force: :cascade do |t|
     t.string "name"
+    t.string "symbol"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
-  create_table "check_specials", force: :cascade do |t|
-    t.string "title"
+  create_table "diseases", force: :cascade do |t|
     t.string "name"
-    t.string "description"
-    t.integer "position"
+    t.text "disadvantage"
+    t.text "solution"
+    t.text "description"
+    t.text "control_problem"
+    t.string "short_description"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.bigint "disease_type_id", null: false
+    t.index ["disease_type_id"], name: "index_diseases_on_disease_type_id"
   end
 
-  create_table "menus", force: :cascade do |t|
-    t.bigint "position"
+  create_table "doctors", force: :cascade do |t|
     t.string "name"
-    t.bigint "price"
-    t.bigint "discount_price"
+    t.string "specialist"
+    t.text "qualification"
+    t.integer "experience"
+    t.text "service"
+    t.string "email"
+    t.string "phone_number"
+    t.string "hospital_address"
+    t.string "hospital_name"
+    t.string "clinic_name"
+    t.string "clinic_address"
+    t.string "time_schedule"
+    t.string "condition_treated"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.bigint "category_id"
-    t.string "gradients"
-    t.index ["category_id"], name: "index_menus_on_category_id"
+    t.bigint "disease_type_id", null: false
+    t.index ["disease_type_id"], name: "index_doctors_on_disease_type_id"
   end
 
   create_table "messages", force: :cascade do |t|
     t.string "name"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  create_table "sliders", force: :cascade do |t|
-    t.bigint "position"
-    t.string "name"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.string "description"
-  end
-
-  create_table "social_links", force: :cascade do |t|
-    t.string "name"
-    t.string "url"
-    t.integer "position"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -130,14 +137,8 @@ ActiveRecord::Schema[7.0].define(version: 2022_06_23_211146) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
-  create_table "why_choose_our_restaurants", force: :cascade do |t|
-    t.string "title"
-    t.string "description"
-    t.integer "position"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
+  add_foreign_key "diseases", "disease_types"
+  add_foreign_key "doctors", "disease_types"
 end

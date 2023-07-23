@@ -332,4 +332,5 @@ ActiveAdmin.setup do |config|
   # You can switch to using Webpacker here.
   #
   # config.use_webpacker = true
+  config.register_javascript "//cdn.ckeditor.com/4.5.6/full/ckeditor.js"
 end
