@@ -336,7 +336,6 @@ PLATFORMS
 DEPENDENCIES
   activeadmin
   aws-sdk-s3
-  bcrypt (~> 3.1.7)
   bootsnap
   bootstrap
   cancancan
