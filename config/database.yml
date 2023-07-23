@@ -28,4 +28,8 @@ test:
 
 production:
   <<: *default
-  database: bmi_managment_pro
+  username: bmi_database_user
+  password: 7hKGcMvIdKA7kOPRODA6sUidylKjlPw5
+  host: dpg-ciuij3lgkuvoig8fskl0-a
+  port: 5432
+  database: bmi_database
